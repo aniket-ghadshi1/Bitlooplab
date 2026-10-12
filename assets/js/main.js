@@ -97,7 +97,7 @@
           </div>
           <div class="footer-bottom">
             <span>&copy; ${new Date().getFullYear()} ${esc(SITE.name)}. All rights reserved.</span>
-            <span><a href="app-ads.txt">app-ads.txt</a></span>
+            <span class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="app-ads.txt">app-ads.txt</a></span>
           </div>
         </div>
       </footer>
@@ -213,7 +213,10 @@
           </div>
           <h3>${esc(app.name)}</h3>
           <p>${esc(app.description)}</p>
-          ${action}
+          <div class="app-actions">
+            ${action}
+            ${app.privacyPolicy ? `<a class="policy-link" href="${esc(app.privacyPolicy)}"${/^https?:/.test(app.privacyPolicy) ? ' target="_blank" rel="noopener"' : ""}>Privacy policy</a>` : ""}
+          </div>
         </div>
       </article>`;
   }
@@ -254,6 +257,19 @@
     );
     search && search.addEventListener("input", render);
     render();
+  }
+
+  /* ---------- Privacy page ---------- */
+  function initPrivacyPage() {
+    document.querySelectorAll(".js-email").forEach((el) => {
+      el.innerHTML = `<a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a>`;
+    });
+    const list = document.getElementById("appPolicies");
+    if (!list) return;
+    const apps = APPS.filter((a) => /^https?:/.test(a.privacyPolicy || ""));
+    list.innerHTML = apps.length
+      ? apps.map((a) => `<li><a href="${esc(a.privacyPolicy)}" target="_blank" rel="noopener">${esc(a.name)} — Privacy Policy</a></li>`).join("")
+      : "<li>App-specific policies are linked from each app's Google Play listing.</li>";
   }
 
   /* ---------- Contact ---------- */
@@ -340,6 +356,7 @@
     initHeader();
     initFeaturedApps();
     initAppsPage();
+    initPrivacyPage();
     initContactInfo();
     initContactForm();
     initReveal();

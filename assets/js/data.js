@@ -25,6 +25,8 @@ window.TYPED_WORDS = ["Android Apps", "Websites", "Web Apps", "Digital Products"
 /* Apps / projects shown on the Apps page and the home page.
    category: "android" | "web"
    playStore / website: leave "" if not live yet ("Coming soon" is shown)
+   privacyPolicy: link to the app's own policy (e.g. your sites.google.com page);
+                  it appears on the app card and on privacy.html
    featured: true to show it on the home page
    These are starter examples — replace them with your real apps. */
 window.APPS = [
@@ -37,6 +39,7 @@ window.APPS = [
     status: "In development",
     playStore: "",
     website: "",
+    privacyPolicy: "",
     featured: true
   },
   {
@@ -48,6 +51,7 @@ window.APPS = [
     status: "In development",
     playStore: "",
     website: "",
+    privacyPolicy: "",
     featured: true
   },
   {
@@ -59,6 +63,7 @@ window.APPS = [
     status: "In development",
     playStore: "",
     website: "",
+    privacyPolicy: "",
     featured: false
   },
   {
@@ -70,6 +75,7 @@ window.APPS = [
     status: "Live",
     playStore: "",
     website: "index.html",
+    privacyPolicy: "privacy.html",
     featured: true
   },
   {
@@ -81,6 +87,7 @@ window.APPS = [
     status: "In development",
     playStore: "",
     website: "",
+    privacyPolicy: "",
     featured: false
   },
   {
@@ -92,6 +99,7 @@ window.APPS = [
     status: "In development",
     playStore: "",
     website: "",
+    privacyPolicy: "",
     featured: false
   }
 ];

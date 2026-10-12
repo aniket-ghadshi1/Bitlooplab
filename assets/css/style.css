@@ -223,7 +223,10 @@ section { padding: 90px 0; }
   background: color-mix(in srgb, var(--primary) 12%, transparent); color: var(--primary);
 }
 .rating { font-size: 0.85rem; color: var(--muted); }
-.app-body .btn { margin-top: auto; align-self: flex-start; padding: 9px 18px; font-size: 0.85rem; }
+.app-actions { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.app-body .btn { padding: 9px 18px; font-size: 0.85rem; }
+.policy-link { font-size: 0.85rem; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.policy-link:hover { color: var(--primary); }
 .empty { text-align: center; color: var(--muted); padding: 40px 0; grid-column: 1 / -1; }
 
 /* ---------- CTA ---------- */
@@ -287,6 +290,23 @@ section { padding: 90px 0; }
   border-top: 1px solid var(--border); padding-top: 22px;
   display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
   color: var(--muted); font-size: 0.85rem;
+}
+
+.footer-legal { display: flex; gap: 18px; }
+.footer-legal a:hover { color: var(--primary); }
+
+/* ---------- Legal / long-form text ---------- */
+.legal { max-width: 800px; margin: 0 auto; }
+.legal .updated { color: var(--muted); font-size: 0.9rem; margin-bottom: 28px; }
+.legal h2 { font-size: 1.3rem; margin: 36px 0 12px; }
+.legal p, .legal li { color: var(--muted); }
+.legal p + p, .legal ul + p { margin-top: 12px; }
+.legal ul { margin: 12px 0 0 22px; display: grid; gap: 8px; }
+.legal a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.legal .note {
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, var(--border));
+  border-radius: 14px; padding: 18px 22px; margin-bottom: 8px;
 }
 
 /* back to top */
