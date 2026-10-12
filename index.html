@@ -2,135 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bitloop Lab — Android App & Website Development</title>
-  <meta name="description" content="Bitloop Lab designs and builds fast, beautiful Android apps and websites for startups and businesses.">
-  <meta property="og:title" content="Bitloop Lab — Android App & Website Development">
-  <meta property="og:description" content="We design and build Android apps and websites that people enjoy using.">
-  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitloop Lab — Android apps &amp; websites people come back to</title>
+  <meta name="description" content="Bitloop Lab is an independent studio from India that designs and builds fast, considered Android apps and websites.">
   <link rel="canonical" href="https://bitlooplab.co.in/">
   <meta property="og:url" content="https://bitlooplab.co.in/">
   <meta property="og:site_name" content="Bitloop Lab">
-  <meta name="theme-color" content="#6c5cff">
+  <meta property="og:title" content="Bitloop Lab — Android apps & websites people come back to">
+  <meta property="og:description" content="An independent studio designing and building Android apps and websites.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f0f0d">
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{var t=localStorage.getItem("bl-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <script>!function(d){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;d.classList.add("motion");try{if(!sessionStorage.getItem("bl-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("bl-nav"))d.classList.add("is-arriving")}catch(e){}setTimeout(function(){d.classList.contains("motion-ok")||d.classList.remove("motion","is-loading","is-arriving")},4000)}(document.documentElement)</script>
 </head>
 <body data-page="home">
+  <div class="loader" aria-hidden="true">
+    <div class="loader__word">Bitloop <i>Lab</i></div>
+    <div class="loader__row"><span class="mono">Android apps &amp; websites</span><span class="loader__count">000</span></div>
+    <div class="loader__bar"></div>
+  </div>
+  <div class="curtain" aria-hidden="true"><span class="mono"></span></div>
   <div id="site-header"></div>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow"><span class="dot"></span> Now taking new projects</span>
-          <h1>We build <span class="typed gradient-text" id="typed">Android Apps</span><br>that people love.</h1>
-          <p class="lead">Bitloop Lab is a small, focused studio that turns your ideas into fast, beautiful Android apps and websites — from first sketch to Play Store launch.</p>
-          <div class="hero-cta">
-            <a href="contact.html" class="btn btn-primary">Start your project →</a>
-            <a href="apps.html" class="btn btn-outline">See our apps</a>
+  <main id="main" tabindex="-1">
+    <!-- Hero: the bit loop -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero__canvas" aria-hidden="true"><canvas></canvas></div>
+      <div class="hero__body">
+        <h1 class="hero__title" id="heroTitle">
+          <span class="line"><span>Apps people</span></span>
+          <span class="line"><span>come <em>back</em></span></span>
+          <span class="line"><span>to.</span><span class="note mono">Android &amp; web studio, India</span></span>
+        </h1>
+        <div class="hero__aside">
+          <p>Bitloop Lab is an independent studio that designs and builds Android apps and websites — quick to load, calm to use, and made to keep people coming back.</p>
+          <div class="hero__actions">
+            <a class="btn" href="contact.html" data-magnetic><span>Start a project ↗</span></a>
+            <a class="roll" href="apps.html"><span data-text="See the work">See the work</span></a>
           </div>
         </div>
-        <div class="mockup" aria-hidden="true">
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="phone-notch"></div>
-              <div class="phone-card"><i></i><div><b></b><b></b></div></div>
-              <div class="phone-card"><i></i><div><b></b><b></b></div></div>
-              <div class="phone-card"><i></i><div><b></b><b></b></div></div>
-              <div class="phone-card"><i></i><div><b></b><b></b></div></div>
-              <div class="phone-card"><i></i><div><b></b><b></b></div></div>
+      </div>
+      <div class="hero__meta mono">
+        <span>(01) Android apps — Kotlin &amp; Compose</span>
+        <span>(02) Websites — fast &amp; accessible</span>
+        <span>Studio time&nbsp; <span data-clock></span></span>
+        <span class="scroll-cue">Scroll <span class="tick" aria-hidden="true"></span></span>
+      </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="sec manifesto" aria-label="About the studio">
+      <div class="grid12">
+        <p class="sec-label mono">§ 01 — Studio</p>
+        <p class="manifesto__text" data-scrub>We're a small lab with a simple loop: listen, sketch, build, ship — then listen again. Every app and website we make is custom-built, light on its feet and <em>yours to keep,</em> from the first line of code to the Play Store listing.</p>
+        <div class="figures">
+          <div class="figure"><strong data-count="2">2</strong><span class="mono muted">Platforms — Android &amp; web</span></div>
+          <div class="figure"><strong data-count="100" data-suffix="%">100%</strong><span class="mono muted">Custom-built code</span></div>
+          <div class="figure"><strong data-count="24" data-suffix="h">24h</strong><span class="mono muted">Typical reply time</span></div>
+          <div class="figure"><strong data-count="1">1</strong><span class="mono muted">Team, start to finish</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities: horizontal, pinned on desktop -->
+    <section class="svc-h" aria-labelledby="svcTitle">
+      <div class="svc-h__panel" data-ink-reveal>
+        <div class="svc-h__track">
+          <div class="svc-h__intro">
+            <p class="sec-label mono">§ 02 — Capabilities</p>
+            <h2 id="svcTitle" data-split>Everything your idea needs to go <em>live.</em></h2>
+            <p class="hint mono"><span class="line"></span>Four ways we help</p>
+          </div>
+          <article class="svc-card">
+            <div class="svc-card__top mono"><span>01 / 04</span><span class="glyph" data-glyph="android"></span></div>
+            <h3>Android apps</h3>
+            <div>
+              <p>Native apps in Kotlin with clean, modern UI — fast, stable and ready for Google Play.</p>
+              <ul><li>Kotlin &amp; Jetpack Compose</li><li>Firebase, APIs &amp; offline</li><li>AdMob &amp; in-app purchases</li></ul>
+              <a class="arrow-link" href="services.html#android">About app builds <span class="arr">↗</span></a>
             </div>
-          </div>
-          <div class="floating-badge b1">⚡ Fast &amp; lightweight</div>
-          <div class="floating-badge b2">📱 Built for Android</div>
+          </article>
+          <article class="svc-card">
+            <div class="svc-card__top mono"><span>02 / 04</span><span class="glyph" data-glyph="web"></span></div>
+            <h3>Websites</h3>
+            <div>
+              <p>Responsive, SEO-friendly websites and web apps that load quickly and read well on every screen.</p>
+              <ul><li>Business &amp; portfolio sites</li><li>Landing pages for apps</li><li>Hosting &amp; domain setup</li></ul>
+              <a class="arrow-link" href="services.html#web">About websites <span class="arr">↗</span></a>
+            </div>
+          </article>
+          <article class="svc-card">
+            <div class="svc-card__top mono"><span>03 / 04</span><span class="glyph" data-glyph="design"></span></div>
+            <h3>UI/UX design</h3>
+            <div>
+              <p>Interfaces designed around real people before a line of code is written.</p>
+              <ul><li>Wireframes &amp; prototypes</li><li>Icons &amp; Play Store graphics</li><li>Material Design 3</li></ul>
+              <a class="arrow-link" href="services.html#design">About design <span class="arr">↗</span></a>
+            </div>
+          </article>
+          <article class="svc-card">
+            <div class="svc-card__top mono"><span>04 / 04</span><span class="glyph" data-glyph="support"></span></div>
+            <h3>Launch &amp; support</h3>
+            <div>
+              <p>Store listing, ads setup and steady updates long after your product goes live.</p>
+              <ul><li>Google Play publishing</li><li>Android SDK &amp; policy updates</li><li>New features on demand</li></ul>
+              <a class="arrow-link" href="services.html#support">About support <span class="arr">↗</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Services preview -->
-    <section class="section-alt">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">What we do</span>
-          <h2>Everything you need to go <span class="gradient-text">digital</span></h2>
-          <p>One team for your app and your website, so your product looks and feels the same everywhere.</p>
-        </div>
-        <div class="grid grid-3">
-          <div class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
-            <h3>Android App Development</h3>
-            <p>Native Android apps in Kotlin with clean, modern UI — built to be fast, stable and ready for Google Play.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg></div>
-            <h3>Website Development</h3>
-            <p>Responsive, SEO-friendly websites and web apps that load quickly and look great on every screen.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
-            <h3>UI/UX &amp; Launch Support</h3>
-            <p>Thoughtful design, Play Store listing, ads setup and ongoing updates after your product goes live.</p>
-          </div>
-        </div>
-        <div class="stats">
-          <div class="stat reveal"><strong class="gradient-text" data-count="2">2</strong><span>Platforms: Android &amp; Web</span></div>
-          <div class="stat reveal"><strong class="gradient-text" data-count="100" data-suffix="%">100%</strong><span>Custom-built code</span></div>
-          <div class="stat reveal"><strong class="gradient-text" data-count="24" data-suffix="h">24h</strong><span>Typical reply time</span></div>
-          <div class="stat reveal"><strong class="gradient-text" data-count="1">1</strong><span>Team, start to finish</span></div>
-        </div>
+    <!-- Selected work (rendered from assets/js/data.js) -->
+    <section class="sec work" aria-labelledby="workTitle">
+      <div class="sec-head">
+        <p class="sec-label mono">§ 03 — Selected work</p>
+        <h2 id="workTitle" data-split>Things we're <em>building.</em></h2>
+      </div>
+      <ol class="work-list" id="workList"></ol>
+      <div class="work-foot">
+        <p class="mono muted">Every project carries a loop signature drawn from its name</p>
+        <a class="arrow-link" href="apps.html"><span>Full index (<span id="workCount">06</span>)</span> <span class="arr">↗</span></a>
       </div>
     </section>
 
-    <!-- Featured apps (rendered from assets/js/data.js) -->
-    <section>
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Our work</span>
-          <h2>Featured <span class="gradient-text">apps &amp; projects</span></h2>
-          <p>A look at what we're building at Bitloop Lab.</p>
+    <!-- Toolkit marquee: speeds up and reverses with your scroll -->
+    <p class="sr-only">Tools we use: Kotlin, Jetpack Compose, Firebase, Google AdMob, JavaScript, React and Figma.</p>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__inner">
+        <div class="marquee__group">
+          <span class="marquee__item">Kotlin</span><span class="marquee__item serif">&amp;</span>
+          <span class="marquee__item outline">Compose</span><span class="marquee__item serif">/</span>
+          <span class="marquee__item">Firebase</span><span class="marquee__item serif">&amp;</span>
+          <span class="marquee__item outline">AdMob</span><span class="marquee__item serif">/</span>
+          <span class="marquee__item">JavaScript</span><span class="marquee__item serif">&amp;</span>
+          <span class="marquee__item outline">React</span><span class="marquee__item serif">/</span>
+          <span class="marquee__item">Figma</span><span class="marquee__item serif">/</span>
         </div>
-        <div class="grid grid-3" id="featuredApps"></div>
-        <div style="text-align:center;margin-top:40px">
-          <a href="apps.html" class="btn btn-outline">View all apps →</a>
+      </div>
+    </div>
+
+    <!-- Principles -->
+    <section class="sec principles" aria-labelledby="whyTitle">
+      <div class="grid12">
+        <div class="principles__head">
+          <p class="sec-label mono">§ 04 — Why Bitloop Lab</p>
+          <h2 id="whyTitle" data-split>Small studio, <em>serious</em> about the details.</h2>
         </div>
+        <ol class="principles__list">
+          <li class="principle" data-reveal><span class="num" aria-hidden="true">i.</span><h3>Clear process</h3><p>Fixed milestones and regular demos, so you always know where your project stands.</p></li>
+          <li class="principle" data-reveal><span class="num" aria-hidden="true">ii.</span><h3>Performance first</h3><p>Lightweight apps and sites that load fast, even on budget phones and slow networks.</p></li>
+          <li class="principle" data-reveal><span class="num" aria-hidden="true">iii.</span><h3>You own it</h3><p>Full source code and accounts are handed over to you. No lock-in.</p></li>
+          <li class="principle" data-reveal><span class="num" aria-hidden="true">iv.</span><h3>Long-term support</h3><p>Bug fixes, Android updates and new features long after launch.</p></li>
+        </ol>
       </div>
     </section>
 
-    <!-- Why us -->
-    <section class="section-alt">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Why Bitloop Lab</span>
-          <h2>Small studio, <span class="gradient-text">big attention to detail</span></h2>
-        </div>
-        <div class="grid grid-4">
-          <div class="card reveal"><h3>🎯 Clear process</h3><p>Fixed milestones and regular demos, so you always know where your project stands.</p></div>
-          <div class="card reveal"><h3>⚡ Performance first</h3><p>Lightweight apps and sites that load fast, even on budget phones and slow networks.</p></div>
-          <div class="card reveal"><h3>🔒 You own it</h3><p>Full source code and accounts are handed over to you. No lock-in.</p></div>
-          <div class="card reveal"><h3>🤝 Long-term support</h3><p>Bug fixes, Android updates and new features long after launch.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section>
-      <div class="container">
-        <div class="cta-box reveal">
-          <h2>Have an app or website idea?</h2>
-          <p>Tell us about it — we'll reply with a plan, timeline and estimate within 24 hours.</p>
-          <a href="contact.html" class="btn">Let's talk →</a>
-        </div>
+    <!-- Call to action -->
+    <section class="cta wrap" aria-labelledby="ctaTitle">
+      <h2 class="cta__title" id="ctaTitle"><span class="line"><span>Got an idea?</span></span><span class="line"><span><em>Let's</em> build it.</span></span></h2>
+      <div class="cta__row">
+        <p>Tell us about it — we'll reply with a plan, a timeline and an estimate within 24 hours.</p>
+        <a class="circle-btn" href="contact.html" data-magnetic><span>Start a<br>project ↗</span></a>
       </div>
     </section>
   </main>
 
   <div id="site-footer"></div>
+  <div class="work-preview" id="workPreview" aria-hidden="true"></div>
 
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

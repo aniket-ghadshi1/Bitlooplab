@@ -2,162 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services — Bitloop Lab</title>
-  <meta name="description" content="Android app development, website development, UI/UX design and maintenance services from Bitloop Lab.">
+  <meta name="description" content="Android app development, website development, UI/UX design and maintenance from Bitloop Lab.">
   <link rel="canonical" href="https://bitlooplab.co.in/services.html">
   <meta property="og:url" content="https://bitlooplab.co.in/services.html">
   <meta property="og:site_name" content="Bitloop Lab">
-  <meta name="theme-color" content="#6c5cff">
+  <meta property="og:title" content="Services — Bitloop Lab">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f0f0d">
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{var t=localStorage.getItem("bl-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <script>!function(d){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;d.classList.add("motion");try{if(!sessionStorage.getItem("bl-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("bl-nav"))d.classList.add("is-arriving")}catch(e){}setTimeout(function(){d.classList.contains("motion-ok")||d.classList.remove("motion","is-loading","is-arriving")},4000)}(document.documentElement)</script>
 </head>
 <body data-page="services">
+  <div class="loader" aria-hidden="true">
+    <div class="loader__word">Bitloop <i>Lab</i></div>
+    <div class="loader__row"><span class="mono">Android apps &amp; websites</span><span class="loader__count">000</span></div>
+    <div class="loader__bar"></div>
+  </div>
+  <div class="curtain" aria-hidden="true"><span class="mono"></span></div>
   <div id="site-header"></div>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Services</div>
-        <h1>Our <span class="gradient-text">Services</span></h1>
-        <p>From idea to launch and beyond — we design, build and maintain Android apps and websites.</p>
+  <main id="main" tabindex="-1">
+    <section class="phero">
+      <h1 class="phero__title" data-split="intro">Services<sup>(04)</sup></h1>
+      <div class="phero__row">
+        <p class="crumb mono" data-reveal="intro"><a href="index.html">Index</a> / Services</p>
+        <ol class="phero__index mono" data-reveal="intro">
+          <li><a href="#android"><span>01</span>Android apps</a></li>
+          <li><a href="#web"><span>02</span>Websites</a></li>
+          <li><a href="#design"><span>03</span>UI/UX design</a></li>
+          <li><a href="#support"><span>04</span>Maintenance &amp; support</a></li>
+        </ol>
+        <p data-reveal="intro">From first sketch to Play Store launch and beyond — we design, build and look after Android apps and websites.</p>
       </div>
     </section>
 
-    <!-- Services -->
-    <section style="padding-top:30px">
-      <div class="container grid grid-2">
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
-          <h3>Android App Development</h3>
+    <section class="svc-list" aria-label="Services in detail">
+      <article class="svc-row" id="android">
+        <p class="svc-row__num mono">01</p>
+        <div class="svc-row__title"><h2 data-split>Android app development</h2><div class="glyph" data-glyph="android"></div></div>
+        <div class="svc-row__body" data-reveal>
           <p>Native apps built with Kotlin and Jetpack Compose, designed to feel at home on every Android phone.</p>
-          <ul>
-            <li>Custom apps for businesses &amp; startups</li>
-            <li>Firebase, REST APIs &amp; offline support</li>
-            <li>AdMob ads &amp; in-app purchases</li>
-            <li>Google Play publishing</li>
-          </ul>
-          <p style="margin-top:20px"><a class="btn btn-primary" href="contact.html?service=Android%20App">Get a quote</a></p>
+          <ul><li>Custom apps for businesses &amp; startups</li><li>Firebase, REST APIs &amp; offline support</li><li>AdMob ads &amp; in-app purchases</li><li>Google Play publishing</li></ul>
+          <a class="arrow-link" href="contact.html?service=Android%20App">Get a quote <span class="arr">↗</span></a>
         </div>
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg></div>
-          <h3>Website Development</h3>
+      </article>
+      <article class="svc-row" id="web">
+        <p class="svc-row__num mono">02</p>
+        <div class="svc-row__title"><h2 data-split>Website development</h2><div class="glyph" data-glyph="web"></div></div>
+        <div class="svc-row__body" data-reveal>
           <p>Modern, responsive websites that help your business get found and win customers.</p>
-          <ul>
-            <li>Business &amp; portfolio websites</li>
-            <li>Landing pages for apps</li>
-            <li>SEO-friendly, fast-loading pages</li>
-            <li>Hosting &amp; domain setup</li>
-          </ul>
-          <p style="margin-top:20px"><a class="btn btn-primary" href="contact.html?service=Website">Get a quote</a></p>
+          <ul><li>Business &amp; portfolio websites</li><li>Landing pages for apps</li><li>SEO-friendly, fast-loading pages</li><li>Hosting &amp; domain setup</li></ul>
+          <a class="arrow-link" href="contact.html?service=Website">Get a quote <span class="arr">↗</span></a>
         </div>
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="13.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 22a10 10 0 1 1 10-10c0 2-1.5 3-3 3h-2a2 2 0 0 0-1.5 3.3A2 2 0 0 1 12 22z"/></svg></div>
-          <h3>UI/UX Design</h3>
+      </article>
+      <article class="svc-row" id="design">
+        <p class="svc-row__num mono">03</p>
+        <div class="svc-row__title"><h2 data-split>UI/UX design</h2><div class="glyph" data-glyph="design"></div></div>
+        <div class="svc-row__body" data-reveal>
           <p>Clean, intuitive interfaces designed around your users before a single line of code is written.</p>
-          <ul>
-            <li>Wireframes &amp; clickable prototypes</li>
-            <li>App icons &amp; Play Store graphics</li>
-            <li>Material Design 3 guidelines</li>
-          </ul>
-          <p style="margin-top:20px"><a class="btn btn-primary" href="contact.html?service=UI%2FUX%20Design">Get a quote</a></p>
+          <ul><li>Wireframes &amp; clickable prototypes</li><li>App icons &amp; Play Store graphics</li><li>Material Design 3 guidelines</li><li>Design handoff to development</li></ul>
+          <a class="arrow-link" href="contact.html?service=UI%2FUX%20Design">Get a quote <span class="arr">↗</span></a>
         </div>
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
-          <h3>Maintenance &amp; Support</h3>
+      </article>
+      <article class="svc-row" id="support">
+        <p class="svc-row__num mono">04</p>
+        <div class="svc-row__title"><h2 data-split>Maintenance &amp; support</h2><div class="glyph" data-glyph="support"></div></div>
+        <div class="svc-row__body" data-reveal>
           <p>Keep your app and website healthy, secure and up to date with every new Android release.</p>
-          <ul>
-            <li>Bug fixes &amp; performance tuning</li>
-            <li>Android SDK &amp; policy updates</li>
-            <li>New features on demand</li>
-          </ul>
-          <p style="margin-top:20px"><a class="btn btn-primary" href="contact.html?service=Maintenance">Get a quote</a></p>
+          <ul><li>Bug fixes &amp; performance tuning</li><li>Android SDK &amp; policy updates</li><li>New features on demand</li><li>Monitoring after launch</li></ul>
+          <a class="arrow-link" href="contact.html?service=Maintenance">Get a quote <span class="arr">↗</span></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Process: sticky storytelling -->
+    <section class="process" aria-labelledby="procTitle">
+      <div class="process__panel" data-ink-reveal>
+        <div class="process__grid">
+          <div class="process__sticky">
+            <div>
+              <p class="sec-label mono">How we work</p>
+              <h2 id="procTitle" data-split>A simple, <em>transparent</em> process.</h2>
+            </div>
+            <div class="odometer" aria-hidden="true">
+              <div class="odometer__track"><div class="odometer__fill"></div></div>
+              <div class="odometer__digits"><span>0</span><span class="odometer__col"><span>1</span><span>2</span><span>3</span><span>4</span></span></div>
+              <p class="mono" id="odoName">Discover</p>
+            </div>
+          </div>
+          <ol class="process__steps">
+            <li class="step"><span class="mono muted">Step 01</span><h3>Discover</h3><p>We learn about your idea, your users and your goals, then share a plan and an estimate.</p></li>
+            <li class="step"><span class="mono muted">Step 02</span><h3>Design</h3><p>Wireframes and visual designs you can click through on your own phone and give feedback on.</p></li>
+            <li class="step"><span class="mono muted">Step 03</span><h3>Develop</h3><p>We build in short sprints, with regular demo builds so you see progress every week.</p></li>
+            <li class="step"><span class="mono muted">Step 04</span><h3>Launch</h3><p>Publishing on Google Play and the web, followed by ongoing support and updates.</p></li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <!-- Process -->
-    <section class="section-alt">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">How we work</span>
-          <h2>A simple, <span class="gradient-text">transparent process</span></h2>
-        </div>
-        <div class="grid grid-4 steps">
-          <div class="card step reveal"><h3>Discover</h3><p>We learn about your idea, users and goals, then share a plan and estimate.</p></div>
-          <div class="card step reveal"><h3>Design</h3><p>Wireframes and visual designs you can click through and give feedback on.</p></div>
-          <div class="card step reveal"><h3>Develop</h3><p>We build in short sprints with regular demo builds on your phone.</p></div>
-          <div class="card step reveal"><h3>Launch</h3><p>Publishing on Google Play and the web, followed by ongoing support.</p></div>
-        </div>
+    <!-- Toolkit -->
+    <section class="sec" aria-labelledby="specTitle">
+      <div class="sec-head">
+        <p class="sec-label mono">Toolkit</p>
+        <h2 id="specTitle" data-split>The <em>spec</em> sheet.</h2>
       </div>
-    </section>
-
-    <!-- Tech -->
-    <section>
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Our toolkit</span>
-          <h2>Technologies we <span class="gradient-text">work with</span></h2>
-        </div>
-        <div class="chips reveal">
-          <span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span><span class="chip">Java</span>
-          <span class="chip">Firebase</span><span class="chip">Google AdMob</span><span class="chip">Room</span>
-          <span class="chip">Retrofit</span><span class="chip">HTML5</span><span class="chip">CSS3</span>
-          <span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Node.js</span>
-          <span class="chip">Figma</span><span class="chip">Git &amp; GitHub</span>
-        </div>
-      </div>
+      <table class="spec" data-reveal>
+        <caption class="sr-only">Technologies we work with</caption>
+        <tbody>
+          <tr><th scope="row" class="mono">Android</th><td><span>Kotlin</span> <span>Jetpack Compose</span> <span>Java</span> <span>Room</span> <span>Retrofit</span></td></tr>
+          <tr><th scope="row" class="mono">Services</th><td><span>Firebase</span> <span>Google AdMob</span> <span>Node.js</span></td></tr>
+          <tr><th scope="row" class="mono">Web</th><td><span>HTML5</span> <span>CSS3</span> <span>JavaScript</span> <span>React</span></td></tr>
+          <tr><th scope="row" class="mono">Design &amp; workflow</th><td><span>Figma</span> <span>Git &amp; GitHub</span></td></tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- FAQ -->
-    <section class="section-alt">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">FAQ</span>
-          <h2>Frequently asked <span class="gradient-text">questions</span></h2>
-        </div>
-        <div class="faq reveal">
-          <details open>
-            <summary>How long does it take to build an app?</summary>
-            <p>A simple app usually takes 3–6 weeks. Larger apps with logins, payments or admin panels take longer. We'll give you a clear timeline after our first call.</p>
-          </details>
-          <details>
-            <summary>How much does an app or website cost?</summary>
-            <p>Every project is different. Share your idea on the contact page and we'll send a free, no-obligation estimate.</p>
-          </details>
-          <details>
-            <summary>Will you publish the app on Google Play for me?</summary>
-            <p>Yes. We prepare the store listing, screenshots, privacy policy and handle the full publishing process.</p>
-          </details>
-          <details>
-            <summary>Can you add ads to my app?</summary>
-            <p>Yes. We integrate Google AdMob and set up the app-ads.txt file on your website so your ad inventory is verified.</p>
-          </details>
-          <details>
-            <summary>Do I own the source code?</summary>
-            <p>Absolutely. Once the project is complete, you get the full source code and access to all accounts.</p>
-          </details>
-        </div>
+    <section class="sec" aria-labelledby="faqTitle" style="padding-top:0">
+      <div class="sec-head">
+        <p class="sec-label mono">FAQ</p>
+        <h2 id="faqTitle" data-split>Good <em>questions.</em></h2>
+      </div>
+      <div class="faq" data-reveal>
+        <details open>
+          <summary><span class="mono muted">01</span><span>How long does it take to build an app?</span><span class="x" aria-hidden="true"></span></summary>
+          <div class="ans"><p>A simple app usually takes 3–6 weeks. Larger apps with logins, payments or admin panels take longer. We'll give you a clear timeline after our first call.</p></div>
+        </details>
+        <details>
+          <summary><span class="mono muted">02</span><span>How much does an app or website cost?</span><span class="x" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Every project is different. Share your idea on the contact page and we'll send a free, no-obligation estimate.</p></div>
+        </details>
+        <details>
+          <summary><span class="mono muted">03</span><span>Will you publish the app on Google Play for me?</span><span class="x" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Yes. We prepare the store listing, screenshots and privacy policy, and handle the full publishing process.</p></div>
+        </details>
+        <details>
+          <summary><span class="mono muted">04</span><span>Can you add ads to my app?</span><span class="x" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Yes. We integrate Google AdMob and set up the app-ads.txt file on your website so your ad inventory is verified.</p></div>
+        </details>
+        <details>
+          <summary><span class="mono muted">05</span><span>Do I own the source code?</span><span class="x" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Absolutely. Once the project is complete, you get the full source code and access to all accounts.</p></div>
+        </details>
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="cta-box reveal">
-          <h2>Ready to get started?</h2>
-          <p>Tell us what you need and we'll get back to you within 24 hours.</p>
-          <a href="contact.html" class="btn">Request a quote →</a>
-        </div>
+    <section class="cta wrap" aria-labelledby="ctaTitle">
+      <h2 class="cta__title" id="ctaTitle"><span class="line"><span>Ready when</span></span><span class="line"><span><em>you</em> are.</span></span></h2>
+      <div class="cta__row">
+        <p>Tell us what you need and we'll get back to you within 24 hours.</p>
+        <a class="circle-btn" href="contact.html" data-magnetic><span>Request<br>a quote ↗</span></a>
       </div>
     </section>
   </main>
 
   <div id="site-footer"></div>
 
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

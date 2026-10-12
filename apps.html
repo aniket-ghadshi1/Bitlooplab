@@ -2,61 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Apps — Bitloop Lab</title>
-  <meta name="description" content="Android apps and websites built by Bitloop Lab.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work — Bitloop Lab</title>
+  <meta name="description" content="Android apps and websites designed and built by Bitloop Lab.">
   <link rel="canonical" href="https://bitlooplab.co.in/apps.html">
   <meta property="og:url" content="https://bitlooplab.co.in/apps.html">
   <meta property="og:site_name" content="Bitloop Lab">
-  <meta name="theme-color" content="#6c5cff">
+  <meta property="og:title" content="Work — Bitloop Lab">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f0f0d">
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{var t=localStorage.getItem("bl-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <script>!function(d){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;d.classList.add("motion");try{if(!sessionStorage.getItem("bl-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("bl-nav"))d.classList.add("is-arriving")}catch(e){}setTimeout(function(){d.classList.contains("motion-ok")||d.classList.remove("motion","is-loading","is-arriving")},4000)}(document.documentElement)</script>
 </head>
 <body data-page="apps">
+  <div class="loader" aria-hidden="true">
+    <div class="loader__word">Bitloop <i>Lab</i></div>
+    <div class="loader__row"><span class="mono">Android apps &amp; websites</span><span class="loader__count">000</span></div>
+    <div class="loader__bar"></div>
+  </div>
+  <div class="curtain" aria-hidden="true"><span class="mono"></span></div>
   <div id="site-header"></div>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Our Apps</div>
-        <h1>Our <span class="gradient-text">Apps &amp; Projects</span></h1>
-        <p>Android apps and websites designed and built by the Bitloop Lab team.</p>
+  <main id="main" tabindex="-1">
+    <section class="phero">
+      <h1 class="phero__title" data-split="intro">Work<sup id="appTotal">(06)</sup></h1>
+      <div class="phero__row">
+        <p class="crumb mono" data-reveal="intro"><a href="index.html">Index</a> / Work</p>
+        <p data-reveal="intro">Android apps and websites designed and built at Bitloop Lab. Each project carries its own loop signature, drawn from its name.</p>
       </div>
     </section>
 
-    <section style="padding-top:30px">
-      <div class="container">
-        <div class="toolbar">
-          <div class="filters" role="group" aria-label="Filter projects">
-            <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
-            <button class="filter-btn" data-filter="android" aria-pressed="false">Android Apps</button>
-            <button class="filter-btn" data-filter="web" aria-pressed="false">Websites</button>
-          </div>
-          <input type="search" class="search" id="appSearch" placeholder="Search apps…" aria-label="Search apps">
-        </div>
-        <p class="rating" id="appCount" aria-live="polite" style="margin-bottom:18px"></p>
-        <!-- Cards are rendered from assets/js/data.js -->
-        <div class="grid grid-3" id="appsGrid"></div>
+    <div class="work-tools" data-reveal="intro">
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All<sup></sup></button>
+        <button class="filter" type="button" data-filter="android" aria-pressed="false">Android<sup></sup></button>
+        <button class="filter" type="button" data-filter="web" aria-pressed="false">Web<sup></sup></button>
       </div>
-    </section>
+      <label class="search"><span class="mono">Search</span><input type="search" id="appSearch" placeholder="Find a project" autocomplete="off"></label>
+    </div>
 
-    <section>
-      <div class="container">
-        <div class="cta-box reveal">
-          <h2>Want your app featured here?</h2>
-          <p>Let's build your next Android app or website together.</p>
-          <a href="contact.html" class="btn">Start a project →</a>
-        </div>
+    <!-- Tiles are rendered from assets/js/data.js -->
+    <section class="tiles" id="tiles" aria-label="Projects" aria-live="polite"></section>
+
+    <section class="cta wrap" aria-labelledby="ctaTitle">
+      <h2 class="cta__title" id="ctaTitle"><span class="line"><span>Your app,</span></span><span class="line"><span><em>next</em> here.</span></span></h2>
+      <div class="cta__row">
+        <p>Let's build your next Android app or website together.</p>
+        <a class="circle-btn" href="contact.html" data-magnetic><span>Start a<br>project ↗</span></a>
       </div>
     </section>
   </main>
 
   <div id="site-footer"></div>
 
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/Flip.min.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

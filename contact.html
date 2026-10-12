@@ -2,95 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact — Bitloop Lab</title>
   <meta name="description" content="Get in touch with Bitloop Lab to start your Android app or website project.">
   <link rel="canonical" href="https://bitlooplab.co.in/contact.html">
   <meta property="og:url" content="https://bitlooplab.co.in/contact.html">
   <meta property="og:site_name" content="Bitloop Lab">
-  <meta name="theme-color" content="#6c5cff">
+  <meta property="og:title" content="Contact — Bitloop Lab">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f0f0d">
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{var t=localStorage.getItem("bl-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <script>!function(d){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;d.classList.add("motion");try{if(!sessionStorage.getItem("bl-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("bl-nav"))d.classList.add("is-arriving")}catch(e){}setTimeout(function(){d.classList.contains("motion-ok")||d.classList.remove("motion","is-loading","is-arriving")},4000)}(document.documentElement)</script>
 </head>
 <body data-page="contact">
+  <div class="loader" aria-hidden="true">
+    <div class="loader__word">Bitloop <i>Lab</i></div>
+    <div class="loader__row"><span class="mono">Android apps &amp; websites</span><span class="loader__count">000</span></div>
+    <div class="loader__bar"></div>
+  </div>
+  <div class="curtain" aria-hidden="true"><span class="mono"></span></div>
   <div id="site-header"></div>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
-        <h1>Let's build <span class="gradient-text">something great</span></h1>
-        <p>Tell us about your app or website idea. We'll reply with a plan, timeline and estimate.</p>
+  <main id="main" tabindex="-1">
+    <section class="hello" aria-labelledby="helloTitle">
+      <h1 class="hello__title" id="helloTitle"><span class="line"><span>Say</span></span><span class="line"><span><em>hello.</em></span></span></h1>
+      <div class="hello__grid">
+        <div class="hello__mail" data-reveal="intro">
+          <p class="mono muted" style="margin-bottom:10px">Write to us</p>
+          <a class="big u" data-email href="mailto:contact@bitlooplab.co.in">contact@bitlooplab.co.in</a><br>
+          <button class="copy-btn mono" id="copyEmail" type="button"><span>Copy address</span></button>
+        </div>
+        <ul class="hello__facts" data-reveal="intro">
+          <li><span class="mono muted">Studio time</span><strong data-clock>IST</strong></li>
+          <li><span class="mono muted">Response</span><strong>Usually within 24 hours</strong></li>
+          <li><span class="mono muted">Based in</span><strong>India — working worldwide</strong></li>
+          <li id="phoneFact"><span class="mono muted">Phone</span><strong></strong></li>
+        </ul>
       </div>
     </section>
 
-    <section style="padding-top:30px">
-      <div class="container contact-grid">
-        <div class="card reveal">
-          <h3 style="margin-bottom:24px">Get in touch</h3>
-          <!-- Filled from assets/js/data.js -->
-          <div id="contactInfo"></div>
-        </div>
-
-        <div class="card reveal">
-          <form class="form" id="contactForm" novalidate>
-            <div class="form-row">
-              <div class="field">
-                <label for="name">Your name *</label>
-                <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
-                <span class="error"></span>
-              </div>
-              <div class="field">
-                <label for="email">Email *</label>
-                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-                <span class="error"></span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="service">Service *</label>
-                <select id="service" name="service" required>
-                  <option value="">Choose a service</option>
-                  <option>Android App</option>
-                  <option>Website</option>
-                  <option>Android App + Website</option>
-                  <option>UI/UX Design</option>
-                  <option>Maintenance</option>
-                  <option>Other</option>
-                </select>
-                <span class="error"></span>
-              </div>
-              <div class="field">
-                <label for="budget">Budget (optional)</label>
-                <select id="budget" name="budget">
-                  <option value="">Not sure yet</option>
-                  <option>Small</option>
-                  <option>Medium</option>
-                  <option>Large</option>
-                </select>
-                <span class="error"></span>
-              </div>
-            </div>
-            <div class="field">
-              <label for="message">Project details *</label>
-              <textarea id="message" name="message" placeholder="Tell us about your idea, features you need and your timeline…" required></textarea>
-              <span class="error"></span>
-            </div>
-            <button type="submit" class="btn btn-primary" style="justify-self:start">Send message →</button>
-            <p class="rating">We only use your details to reply to you. See our <a href="privacy.html" class="policy-link">Privacy Policy</a>.</p>
-            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          </form>
-        </div>
+    <section class="brief" aria-labelledby="briefTitle">
+      <div class="brief__inner">
+        <h2 class="brief__label sec-label mono" id="briefTitle">Project brief</h2>
+        <form id="contactForm" novalidate data-reveal>
+          <p class="sentence">
+            Hi Bitloop Lab — my name is
+            <span class="blank"><label class="sr-only" for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="your name" required><span class="error" aria-live="polite"></span></span>
+            and I'd like help with
+            <span class="blank"><label class="sr-only" for="service">Service you need</label><select id="service" name="service" required>
+              <option value="">choose one</option>
+              <option>Android App</option>
+              <option>Website</option>
+              <option>Android App + Website</option>
+              <option>UI/UX Design</option>
+              <option>Maintenance</option>
+              <option>Other</option>
+            </select><span class="error" aria-live="polite"></span></span>
+            — you can reach me at
+            <span class="blank"><label class="sr-only" for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required><span class="error" aria-live="polite"></span></span>
+            and my budget is
+            <span class="blank"><label class="sr-only" for="budget">Budget (optional)</label><select id="budget" name="budget">
+              <option value="">not sure yet</option>
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+            </select></span>
+          </p>
+          <div class="field">
+            <label class="mono muted" for="message">Here's the idea —</label>
+            <textarea id="message" name="message" placeholder="Features you need, who it's for, your timeline…" required></textarea>
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <div class="brief__foot">
+            <p>We only use your details to reply to you. See our <a class="u" href="privacy.html">Privacy Policy</a>.</p>
+            <button class="btn" type="submit" data-magnetic><span>Send the brief ↗</span></button>
+          </div>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
       </div>
     </section>
   </main>
 
   <div id="site-footer"></div>
 
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
