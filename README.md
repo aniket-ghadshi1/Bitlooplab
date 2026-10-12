@@ -32,18 +32,47 @@ python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
 
-## Deploy on GitHub Pages
+## Deploy on GitHub Pages at bitlooplab.co.in
+
+The `CNAME` file already tells GitHub Pages to serve this site at **https://bitlooplab.co.in**.
+
+### 1. Turn on GitHub Pages
 
 1. Repository → **Settings → Pages**
-2. Source: **Deploy from a branch**, pick the branch and `/ (root)`
-3. Save. The site goes live at `https://<username>.github.io/<repo>/`
+2. Source: **Deploy from a branch**, pick the branch holding these files and `/ (root)`, then **Save**
+3. Under **Custom domain**, confirm `bitlooplab.co.in` is filled in
 
-### Important: app-ads.txt must sit at your domain root
+### 2. Add DNS records at your domain registrar
 
-AdMob looks for `https://<your-domain>/app-ads.txt`, using the developer website listed on your Google Play store page.
-A project site like `https://<username>.github.io/Bitlooplab/` puts the file at `/Bitlooplab/app-ads.txt`, which AdMob **will not** find. Use one of these:
+| Type | Host / Name | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `aniket-ghadshi1.github.io` |
 
-- **Custom domain (recommended):** add your domain (e.g. `bitlooplab.com`) under Settings → Pages → Custom domain. The file is then served at `https://bitlooplab.com/app-ads.txt`.
-- **User site:** host these files in a repository named `<username>.github.io`.
+Optional IPv6 (AAAA, host `@`): `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.
 
-Then put that same domain in the *Website* field of your Google Play developer/store listing.
+Delete any other A, AAAA or CNAME records for `@` and `www` (for example a registrar "parking" page). DNS can take up to 24 hours to update.
+
+### 3. Turn on HTTPS
+
+Once GitHub shows the DNS check as successful, tick **Enforce HTTPS** in Settings → Pages. The certificate can take up to an hour to appear.
+
+### 4. Verify
+
+- https://bitlooplab.co.in loads the site
+- https://bitlooplab.co.in/app-ads.txt shows `google.com, pub-4490481718549008, DIRECT, f08c47fec0942fa0`
+
+### 5. Connect AdMob
+
+1. In **Google Play Console**, set your developer **Website** to `https://bitlooplab.co.in` (Store settings → Store listing contact details) on every app that shows ads.
+2. In **AdMob → Apps → app-ads.txt**, click **Check for updates**. Verification can take up to 24 hours.
+
+AdMob reads `app-ads.txt` only from the domain root, which is why the custom domain matters: the plain `github.io/Bitlooplab/` address would not work.
+
+### Optional
+
+- Submit `https://bitlooplab.co.in/sitemap.xml` in **Google Search Console** so Google indexes the site faster.
+- Recommended: verify the domain in GitHub (Settings → Pages → *Verified domains*) so no one else can point a GitHub Pages site at it.

@@ -6,8 +6,9 @@
 
 window.SITE = {
   name: "Bitloop Lab",
+  domain: "bitlooplab.co.in",
   tagline: "Android apps & websites, crafted with care.",
-  email: "contact@bitlooplab.com", // TODO: replace with your real email
+  email: "contact@bitlooplab.co.in", // TODO: make sure this mailbox exists (or change it)
   phone: "",                       // e.g. "+91 98765 43210" (leave empty to hide)
   location: "India",
   playStoreDeveloperUrl: "",       // e.g. "https://play.google.com/store/apps/dev?id=..." (leave empty to hide)
