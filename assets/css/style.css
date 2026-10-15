@@ -491,6 +491,10 @@ html.is-loading .loader, html.is-arriving .curtain { visibility: visible; }
 .search:focus-within { border-color: var(--signal); }
 .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: clamp(60px, 7vw, 110px); padding: 0 var(--gutter) clamp(90px, 12vw, 160px); align-items: start; }
 .tile.is-offset { margin-top: clamp(60px, 10vw, 160px); }
+/* small portfolios: two staggered columns, posters kept to a readable size */
+.tiles--few { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tiles--few .tile { width: min(100%, 540px); }
+.tiles--few .tile.is-offset { justify-self: end; }
 .tile[hidden] { display: none; }
 .tile__media { perspective: 900px; display: block; }
 .tile__media .poster { transform-style: preserve-3d; will-change: transform; }
@@ -498,6 +502,8 @@ html.is-loading .loader, html.is-arriving .curtain { visibility: visible; }
 .tile__meta h3 { font-size: clamp(1.5rem, 2.2vw, 2.1rem); letter-spacing: -0.04em; line-height: 1; font-weight: 600; font-stretch: 106%; }
 .tile__meta .mono { align-self: start; padding-top: 0.4em; }
 .tile__meta p { grid-column: 1 / -1; color: var(--muted); max-width: 42ch; }
+.tile__meta p.tile__tag { font-family: var(--f-serif); font-style: italic; font-size: 1.3rem; color: var(--ink); line-height: 1.1; }
+.tile__meta p.tile__ref { font-size: 0.72rem; text-transform: none; letter-spacing: 0.02em; }
 .tile__actions { grid-column: 1 / -1; display: flex; gap: 22px; flex-wrap: wrap; margin-top: 6px; font-size: 0.95rem; }
 .tile__actions .soon { color: var(--muted); font-family: var(--f-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; padding-top: 0.2em; }
 .tiles .empty { grid-column: 1 / -1; font-size: var(--fs-m); letter-spacing: -0.03em; color: var(--muted); }

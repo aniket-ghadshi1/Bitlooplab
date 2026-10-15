@@ -11,7 +11,10 @@
   "use strict";
 
   const SITE = window.SITE || {};
-  const APPS = window.APPS || [];
+  const APPS = (window.APPS || []).map((a) => ({
+    ...a,
+    playStore: a.playStore || (a.packageName ? `https://play.google.com/store/apps/details?id=${encodeURIComponent(a.packageName)}` : "")
+  }));
   const root = document.documentElement;
   const page = document.body.dataset.page || "home";
   const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -257,11 +260,11 @@
     if (!list) return;
     const featured = APPS.map((a, i) => ({ a, i })).filter((x) => x.a.featured).slice(0, 4);
     list.innerHTML = featured.map(({ a, i }, k) => `
-      <li><a class="work-row" href="apps.html#app-${slug(a.name)}" data-index="${k}" data-cursor="View">
+      <li><a class="work-row" href="${esc(a.playStore || a.website || `apps.html#app-${slug(a.name)}`)}"${a.playStore || /^https?:/.test(a.website || "") ? ' target="_blank" rel="noopener"' : ""} data-index="${k}" data-cursor="${a.playStore ? "Get it" : "Visit"}">
         <span class="mono muted">${pad(k + 1)}</span>
-        <span class="work-row__name">${esc(a.name)}</span>
+        <span class="work-row__name">${esc(a.name)}<span class="sr-only"> — ${esc(a.tagline || "")}${a.playStore ? " (opens Google Play)" : a.website ? " (opens website)" : ""}</span></span>
         <span class="work-row__thumb" aria-hidden="true">${poster(a, i)}</span>
-        <span class="mono work-row__cat">${a.category === "web" ? "Website" : "Android app"}</span>
+        <span class="mono work-row__cat" aria-hidden="true">${esc(a.tagline || (a.category === "web" ? "Website" : "Android app"))}</span>
         <span class="mono work-row__status muted">${esc(a.status)}</span>
         <span class="arr" aria-hidden="true">↗</span>
       </a></li>`).join("");
@@ -281,7 +284,7 @@
     if (app.playStore) links.push(`<a class="u" href="${esc(app.playStore)}" target="_blank" rel="noopener">Google Play ↗</a>`);
     if (app.website) {
       const ext = /^https?:/.test(app.website);
-      links.push(`<a class="u" href="${esc(app.website)}"${ext ? ' target="_blank" rel="noopener"' : ""}>Visit${ext ? " ↗" : ""}</a>`);
+      links.push(`<a class="u" href="${esc(app.website)}"${ext ? ' target="_blank" rel="noopener"' : ""}>${ext ? esc(app.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")) + " ↗" : "Visit"}</a>`);
     }
     if (!links.length) links.push('<span class="soon">Coming soon</span>');
     if (app.privacyPolicy) {
@@ -295,18 +298,22 @@
     const grid = $("#tiles");
     if (!grid) return;
     grid.innerHTML = APPS.map((a, i) => `
-      <article class="tile" id="app-${slug(a.name)}" data-cat="${a.category === "web" ? "web" : "android"}" data-text="${esc((a.name + " " + a.description).toLowerCase())}">
+      <article class="tile" id="app-${slug(a.name)}" data-cat="${a.category === "web" ? "web" : "android"}" data-text="${esc([a.name, a.tagline, a.description, a.packageName].join(" ").toLowerCase())}">
         <div class="tile__media" data-reveal="clip">${poster(a, i)}</div>
         <div class="tile__meta">
           <h3>${esc(a.name)}</h3>
           <span class="mono muted">${esc(a.status)}</span>
+          <p class="tile__tag">${esc(a.tagline || "")}</p>
           <p>${esc(a.description)}</p>
+          ${a.packageName ? `<p class="mono muted tile__ref">${esc(a.packageName)}</p>` : ""}
           <div class="tile__actions">${appActions(a)}</div>
         </div>
       </article>`).join("") + '<p class="empty" hidden>Nothing matches that search — yet.</p>';
 
     const tiles = $$(".tile", grid);
     const empty = $(".empty", grid);
+    const few = APPS.length <= 4;
+    grid.classList.toggle("tiles--few", few);
     const buttons = $$(".filter");
     const search = $("#appSearch");
     const counts = { all: APPS.length, android: APPS.filter((a) => a.category !== "web").length, web: APPS.filter((a) => a.category === "web").length };
@@ -315,7 +322,7 @@
     if (total) total.textContent = `(${pad(APPS.length)})`;
     let filter = "all";
 
-    const cols = () => (window.innerWidth <= 640 ? 1 : window.innerWidth <= 1100 ? 2 : 3);
+    const cols = () => (window.innerWidth <= 640 ? 1 : few || window.innerWidth <= 1100 ? 2 : 3);
     const offsets = () => {
       const c = cols();
       tiles.filter((t) => !t.hidden).forEach((t, k) => t.classList.toggle("is-offset", c > 1 && k % c === 1));

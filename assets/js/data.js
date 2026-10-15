@@ -24,79 +24,61 @@ window.SITE = {
 
 /* Apps / projects shown on the Work page and the home page.
    category:      "android" | "web"
-   tone:          poster colour for the app (any CSS colour). Text colour is picked automatically.
-   playStore /
-   website:       leave "" if not live yet ("Coming soon" is shown)
+   tagline:       a few words on what it does
+   packageName:   Android package name; the Google Play link is built from it
+   website:       full URL for websites (or an app's own site)
+   tone:          poster colour for the project (any hex colour). Text colour is picked automatically.
    privacyPolicy: link to the app's own policy (e.g. your sites.google.com page);
                   it appears on the app's tile and on privacy.html
-   featured:      true to show it on the home page
-   Each app also gets a unique "loop signature" drawing generated from its name.
-   These are starter examples — replace them with your real apps. */
+   featured:      true to show it on the home page (up to 4)
+   Each project also gets a unique "loop signature" drawing generated from its name. */
 window.APPS = [
   {
-    name: "Loop Notes",
+    name: "ZeroSnap",
     category: "android",
+    tagline: "Auto-delete photos",
     tone: "#ff4f1f",
-    description: "A fast, offline-first notes app with folders, reminders and dark mode.",
-    status: "In development",
-    playStore: "",
+    description: "Automatically deletes the photos you don't need to keep, so your gallery and storage stay clutter-free.",
+    status: "On Google Play",
+    packageName: "com.snaptrash.app",
     website: "",
     privacyPolicy: "",
     featured: true
   },
   {
-    name: "Bit Habit",
+    name: "LinkNook",
     category: "android",
+    tagline: "Auto-sort bookmarks",
     tone: "#c4d0bf",
-    description: "Build better habits with daily streaks, gentle nudges and progress charts.",
-    status: "In development",
-    playStore: "",
+    description: "Save links from anywhere and LinkNook sorts your bookmarks automatically, so you can find them again without the mess.",
+    status: "On Google Play",
+    packageName: "com.linknook.app",
     website: "",
     privacyPolicy: "",
     featured: true
   },
   {
-    name: "Quick Calc Pro",
+    name: "IndiBill",
     category: "android",
+    tagline: "GST bills & UPI QR",
     tone: "#1f2a44",
-    description: "A clean calculator with unit conversion, history and EMI tools.",
-    status: "In development",
-    playStore: "",
+    description: "Make GST bills and UPI payment QR codes right from your phone — simple billing for Indian shops and small businesses.",
+    status: "On Google Play",
+    packageName: "com.indibill",
     website: "",
     privacyPolicy: "",
-    featured: false
-  },
-  {
-    name: "Bitloop Lab Website",
-    category: "web",
-    tone: "#0f0f0d",
-    description: "Our own studio website — the one you're looking at.",
-    status: "Live",
-    playStore: "",
-    website: "index.html",
-    privacyPolicy: "privacy.html",
     featured: true
   },
   {
-    name: "Shop Starter",
+    name: "Namnamah",
     category: "web",
-    tone: "#e6c34a",
-    description: "A lightweight storefront template with product catalogue and WhatsApp ordering.",
-    status: "In development",
-    playStore: "",
-    website: "",
-    privacyPolicy: "",
-    featured: false
-  },
-  {
-    name: "Word Loop",
-    category: "android",
+    tagline: "Clothing store",
     tone: "#d8cab5",
-    description: "A relaxing daily word puzzle game with hints and offline play.",
-    status: "In development",
-    playStore: "",
-    website: "",
+    description: "An online clothing store, designed and built by Bitloop Lab.",
+    status: "Live",
+    packageName: "",
+    website: "https://namnamah.com",
     privacyPolicy: "",
-    featured: false
+    featured: true
   }
 ];
